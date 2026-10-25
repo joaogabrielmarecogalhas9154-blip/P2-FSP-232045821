@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/33932092/README.md)
 # P2 – Finanças do Setor Público (UnB, CCA0169, 2026.2)
 
 **Dependência de transferências, autonomia fiscal e efeito *flypaper*: Barreiras e Camaçari (BA) e os governos locais da Hungria (2016–2025)**
