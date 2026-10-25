@@ -1,0 +1,31 @@
+\begin{table}[H]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Robustez e placebos: efeito marginal da transferência sobre o gasto (2014--2023)}
+\label{tab:robustez}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Despesa total ($G$)} & \multicolumn{2}{c}{Despesa corrente ($G^{c}$)} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Especificação & Coef. (EP) & $p$ & Coef. (EP) & $p$ \\
+\midrule
+Base: $T^{*}$ (Tabela~\ref{tab:regressao}) & 3,08 (0,97) & 0,007 & 2,95 (0,65) & 0,000 \\
+$T$ (com a cota do ICMS) & 1,85 (0,66) & 0,014 & 1,66 (0,48) & 0,004 \\
+Sem a dummy $D2018$ & 4,58 (1,70) & 0,017 & 3,86 (1,14) & 0,004 \\
+Com tendência linear comum & 3,10 (1,56) & 0,068 & 2,98 (0,98) & 0,009 \\
+Sem o ano de 2017 & 2,98 (1,01) & 0,012 & 2,86 (0,66) & 0,001 \\
+Sem o ano de 2020 & 4,34 (0,98) & 0,001 & 3,44 (0,75) & 0,001 \\
+Sem o ano de 2022 & 3,25 (1,24) & 0,021 & 3,09 (0,83) & 0,003 \\
+Totais em log, com ln(população)$^{a}$ & 3,80 (1,70) & 0,043 & 3,94 (0,97) & 0,001 \\
+Per capita em log$^{a}$ & 2,80 (1,20) & 0,035 & 3,08 (0,68) & 0,000 \\
+Inclinação própria: Camaçari & 5,48 (2,74) & 0,065 & 5,97 (1,53) & 0,002 \\
+Inclinação própria: Barreiras & 2,31 (0,96) & 0,031 & 1,99 (0,48) & 0,001 \\
+\midrule
+Placebo: FUNDEB no lugar de $T^{*}$ & 3,75 (0,98) & 0,002 & 3,23 (0,70) & 0,000 \\
+Placebo: SUS no lugar de $T^{*}$ & 1,88 (1,87) & 0,335 & 1,40 (1,54) & 0,378 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\vspace{3pt}\parbox{\textwidth}{\scriptsize Nota: cada linha reestima o modelo da Tabela~\ref{tab:regressao} com a alteração indicada; colunas 2--3 para a despesa total ($G$) e 4--5 para a despesa corrente ($G^{c}$). Coef. = reais de gasto por R\$ 1 a mais da transferência indicada (EP HC1); $p$ = teste de igualdade com o efeito marginal do PIB. (a) Efeito marginal calculado pelo método delta a partir das elasticidades (coeficiente $\times$ média do gasto / média da variável). Na especificação com inclinação própria, o $p$ da diferença entre os municípios é 0,304 ($G$) e 0,028 ($G^{c}$). Placebos: o FUNDEB e as transferências do SUS são vinculados, mas acompanham o mesmo ciclo de receitas; um coeficiente semelhante ao de $T^{*}$ indica que a associação não é específica das transferências incondicionais. Fonte: elaboração própria.}
+\end{table}

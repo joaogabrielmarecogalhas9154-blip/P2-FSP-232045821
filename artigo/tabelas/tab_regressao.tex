@@ -1,0 +1,38 @@
+\begin{table}[H]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Gasto municipal, transferências e PIB: efeitos marginais estimados em níveis per capita (2014--2023)}
+\label{tab:regressao}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{lccccc}
+\toprule
+ & (1) & (2) & (3) & (4) & (5) \\
+\midrule
+Variável dependente & $G$ & $G^{c}$ & $G$ & $G^{c}$ & $G^{c}$ \\
+\midrule
+$T$ (incondicionais) & 1,854** & 1,662*** &  &  &  \\
+ & (0,664) & (0,476) &  &  &  \\
+$T^{*}$ (sem a cota do ICMS) &  &  & 3,080*** & 2,949*** &  \\
+ &  &  & (0,973) & (0,645) &  \\
+FPM &  &  &  &  & 2,941*** \\
+ &  &  &  &  & (0,975) \\
+Cota-parte do ICMS &  &  &  &  & 0,627 \\
+ &  &  &  &  & (1,088) \\
+$Y$ (PIB) & -0,020 & -0,027* & -0,007 & -0,017* & -0,020 \\
+ & (0,016) & (0,015) & (0,010) & (0,008) & (0,013) \\
+$D2018$ & 991,752*** & 596,838*** & 1.038,187*** & 627,780*** & 602,511*** \\
+ & (247,482) & (158,802) & (258,595) & (164,498) & (174,409) \\
+\midrule
+Efeito fixo de município & Sim & Sim & Sim & Sim & Sim \\
+$\gamma_{\text{transf.}} - \gamma_Y$ & 1,87** & 1,69*** & 3,09*** & 2,97*** & 2,96*** \\
+ & (0,68) & (0,49) & (0,98) & (0,65) & (0,98) \\
+IC 95\% da diferença & [0,43; 3,32] & [0,65; 2,73] & [1,00; 5,17] & [1,58; 4,35] & [0,87; 5,05] \\
+$p$ ($H_0$: FPM = ICMS) & -- & -- & -- & -- & 0,214 \\
+Observações & 20 & 20 & 20 & 20 & 20 \\
+$R^2$ & 0,895 & 0,935 & 0,898 & 0,945 & 0,942 \\
+Durbin-Watson & 1,22 & 0,96 & 1,28 & 1,15 & 1,18 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\vspace{3pt}\parbox{\textwidth}{\scriptsize Nota: MQO com efeito fixo de município; variáveis em R\$ de 2025 per capita; erros-padrão robustos HC1 entre parênteses; *** $p<0{,}01$, ** $p<0{,}05$, * $p<0{,}1$. Os coeficientes são efeitos marginais: reais de gasto associados a R\$ 1 a mais da variável. Sob o teorema da equivalência, $\gamma_{\text{transf.}} = \gamma_Y$. $G$ = despesa total; $G^{c}$ = despesa corrente; $T$ = FPM + ITR + cotas de ICMS, IPVA e IPI-exportação + IOF-ouro; $T^{*}$ = $T$ sem a cota do ICMS. Correlação com $Y$ dentro do município: $T$ = 0,72; $T^{*}$ = 0,48; ICMS = 0,78. A cota do ICMS responde, em média, por 78\% das transferências incondicionais de Camaçari e 40\% das de Barreiras (2014--2023). Com 20 observações e erros autocorrelacionados (Durbin-Watson abaixo de 2), os erros-padrão tendem a ser subestimados; os resultados são exploratórios. Fonte: elaboração própria.}
+\end{table}

@@ -1,0 +1,60 @@
+\section{METODOLOGIA}\label{sec:metodologia}
+
+\subsection{Delineamento, unidades e período}
+
+O estudo adota um delineamento de estudo de caso comparado, quantitativo e exploratório. As unidades de análise são os municípios de Barreiras e Camaçari, na Bahia, e o setor de governos locais da Hungria. Os municípios foram atribuídos pela disciplina, e não escolhidos para o desenho, mas o par tem uma propriedade útil para a pergunta: desde 2018, os dois recebem o mesmo valor de FPM, enquanto diferem acentuadamente na base econômica. A propriedade não é rara, porque todos os municípios do interior de um estado que estão na faixa máxima de população recebem o mesmo valor, o que permitiria, em pesquisa futura, um painel maior com os mesmos dados. Segundo o IBGE, a indústria respondeu por 52\% a 61\% do valor adicionado bruto de Camaçari entre 2014 e 2021; em Barreiras, os serviços (43\% a 56\%) e a agropecuária (15\% a 32\%) formam a base produtiva.
+
+A Tabela~\ref{tab:fpm} documenta a igualdade do FPM. Os valores coincidem a partir de 2018 e diferem ligeiramente antes. O coeficiente de cada ano é fixado pelo TCU com a estimativa populacional do ano anterior. A estimativa de 2017 (157.638 habitantes) colocou Barreiras acima do limite de 156.216 habitantes da faixa máxima \citep{DL1881}; a de 2018 (153.831) a teria rebaixado em 2019, mas a Lei Complementar n.º 165/2019 manteve os coeficientes de 2018 até o censo seguinte \citep{LC165}, e o Censo 2022 (159.734) manteve o município acima do limite. A população usada pelo TCU não coincide, portanto, com a série anual usada nos indicadores per capita deste artigo.
+
+\input{tabelas/tab_fpm}
+
+O período descritivo vai de 2016 a 2025, os dez anos mais recentes com Declaração de Contas Anuais (DCA) completa para os dois municípios. A coleta cobre 2014--2025 para permitir a comparação valor a valor com o trabalho anterior \citep{DutraP1}, que analisou 2014--2023. As regressões usam 2014--2023, porque o PIB municipal do IBGE não está disponível para 2024 e 2025. Para a Hungria, a série obtida vai de 2012 a 2025 e, portanto, começa dentro da primeira onda de recentralização, iniciada em 2011.
+
+A Hungria entra como contraste institucional, não como unidade comparável em nível. Os municípios brasileiros são entes federativos com transferências constitucionais obrigatórias; os governos locais húngaros pertencem a um Estado unitário e são observados pelo agregado do setor S1313 das contas nacionais, em outra moeda e em outra escala. A comparação limita-se a razões (participação das transferências e dos impostos na receita, receitas e despesa em proporção do PIB) e a tendências.
+
+\subsection{Fontes e tratamento dos dados}
+
+As receitas e despesas municipais provêm da DCA do Siconfi \citep{Siconfi}: Anexo I-C (receitas, coluna ``Receitas Brutas Realizadas'', com as deduções para o FUNDEB em coluna própria), Anexo I-D (despesas por natureza, empenhadas) e Anexo I-E (despesas por função). O PIB e o valor adicionado municipal (tabela 5938), a população (tabelas 6579 e 4714, Censo 2022) e o IPCA (tabela 1737) provêm do IBGE \citep{IBGESidra}. Os dados da Hungria provêm do Eurostat, nos conjuntos \textit{gov\_10a\_main} e \textit{prc\_hicp\_aind} \citep{Eurostat}, e a população, do Banco Mundial \citep{WDI}.
+
+Cinco regras orientam o tratamento. Primeiro, os valores monetários são deflacionados pela média anual do IPCA, a preços de 2025 (para a Hungria, pelo HICP médio anual), e divididos pela população; a de 2022 é a do Censo, e a de 2023 é interpolada linearmente entre o Censo e a estimativa de 2024, com o preenchimento sinalizado na base. Segundo, valores ausentes permanecem ausentes e nunca são substituídos por zero. Terceiro, as mudanças no ementário da receita em 2018 e em 2022 são tratadas pela identificação de cada conta por código e rótulo, de modo que, por exemplo, o FPM inclui todas as parcelas em todos os anos. Quarto, o resultado orçamentário é calculado com a receita líquida da dedução para o FUNDEB. Quinto, como a receita corrente bruta conta duas vezes os 20\% retidos do FPM e das cotas e devolvidos pelo fundo, a dependência é apresentada também em base líquida, com a dedução retirada do numerador e do denominador. O extrator de rubricas foi validado contra as planilhas brutas do trabalho anterior, e os códigos, a base original, os dados brutos e tratados e o registro das alterações estão no repositório do trabalho.
+
+\subsection{Variáveis}
+
+A Tabela~\ref{tab:variaveis} resume as variáveis. As transferências incondicionais ($T$) somam FPM, ITR, cotas-partes de ICMS, IPVA e IPI-exportação e IOF-ouro, ou seja, os repasses de livre aplicação, ressalvados os mínimos constitucionais. Ficam de fora o FUNDEB, o SUS e as transferências do FNDE, vinculadas a funções específicas. Define-se também $T^{*}$, que exclui de $T$ a cota-parte do ICMS. $T^{*}$ ainda contém componentes ligados ao território, como o ITR, a cota do IPVA e a do IPI-exportação, mas são pequenos: o FPM responde por 82\% a 84\% do nível de $T^{*}$ nos dois municípios e por 86\% de sua variação dentro de cada município entre 2014 e 2023. A renda local ($Y$) é medida pelo PIB municipal per capita, que mede a produção no território, e não a renda dos residentes, da qual só uma fração é tributável localmente; essa diferença é maior em Camaçari, onde boa parte do valor adicionado industrial remunera capital de fora do município. O desfecho principal ($G$) é a despesa total empenhada per capita; a despesa corrente ($G^{c}$), mais próxima do custeio que as transferências incondicionais costumam financiar, é apresentada como desfecho secundário.
+
+\begin{table}[H]
+\centering\small
+\caption{Variáveis do modelo e sinais esperados}\label{tab:variaveis}
+\begin{tabularx}{\textwidth}{l X c}
+\toprule
+Variável & Definição e mensuração & Sinal esperado \\
+\midrule
+$G_{it}$ & Despesa total empenhada real per capita (R\$~de 2025); desfecho principal & --- \\
+$G^{c}_{it}$ & Despesa corrente empenhada real per capita (R\$~de 2025); desfecho secundário & --- \\
+$T_{it}$ & Transferências incondicionais reais per capita: FPM + ITR + cotas de ICMS, IPVA e IPI-exportação + IOF-ouro & $+$ \\
+$T^{*}_{it}$ & $T$ sem a cota-parte do ICMS: FPM + ITR + cotas de IPVA e IPI-exportação & $+$ \\
+$\mathit{FPM}_{it}$, $\mathit{ICMS}_{it}$ & Componentes de $T$ estimados separadamente & $+$, $+$ \\
+$Y_{it}$ & PIB municipal real per capita (R\$~de 2025) & $+$ \\
+$D2018_t$ & 1 a partir de 2018 & ? \\
+\bottomrule
+\end{tabularx}
+\fonte{elaboração própria a partir de Siconfi e IBGE.}
+\end{table}
+
+\subsection{Modelo empírico e estratégia de estimação}
+
+O teorema da equivalência compara efeitos marginais em reais: quanto o gasto varia quando a transferência aumenta um real e quanto varia quando a renda aumenta um real. Por isso o modelo principal é estimado em níveis per capita, por mínimos quadrados ordinários com efeito fixo de município:
+\begin{equation}\label{eq:flypaper}
+G_{it} = \alpha_i + \gamma_T\, T_{it} + \gamma_Y\, Y_{it} + \delta\, D2018_t + \varepsilon_{it},
+\end{equation}
+em que $i$ indexa o município, $t$ o ano e $\alpha_i$ capta as características fixas de cada município, de modo que os coeficientes são identificados apenas pela variação de cada município ao longo do tempo. Os coeficientes $\gamma_T$ e $\gamma_Y$ são os próprios efeitos marginais. Há indício de efeito \textit{flypaper} (H1) quando $\gamma_T > \gamma_Y$, testado com a matriz de covariância robusta HC1 e reportado com intervalo de confiança. A comparação de elasticidades em logaritmo não testa a equivalência: como o PIB per capita é dezenas de vezes maior que $T$, elasticidades iguais correspondem a efeitos marginais muito diferentes. A equação é estimada com $T$, com $T^{*}$ e com FPM e ICMS separados,
+\begin{equation}\label{eq:decomposicao}
+G_{it} = \alpha_i + \gamma_F\, \mathit{FPM}_{it} + \gamma_I\, \mathit{ICMS}_{it} + \gamma_Y\, Y_{it} + \delta\, D2018_t + \varepsilon_{it},
+\end{equation}
+caso em que se testa também $\gamma_F = \gamma_I$. A dummy $D2018$ é mantida porque, embora o ementário tenha sido harmonizado por código, a mudança de 2018 alterou a classificação de outras rubricas da despesa e da receita; as estimativas sem ela são apresentadas na robustez.
+
+A robustez inclui oito variações: o modelo sem $D2018$; com tendência linear comum; sem os anos de 2017 (transferência extraordinária em Barreiras), 2020 e 2022 (pandemia e mudança de ementário); em valores totais, em logaritmo, com o logaritmo da população como controle, para afastar a correlação espúria induzida pelo denominador comum das variáveis per capita; em logaritmo per capita, com os efeitos marginais obtidos pelo método delta; e com inclinação própria para cada município. Dois placebos substituem $T^{*}$ pelo FUNDEB e pelas transferências do SUS. Essas receitas são vinculadas e não deveriam, pela teoria do \textit{flypaper}, gerar a mesma resposta do gasto livre; se geram, a associação entre gasto e transferências reflete o ciclo comum das receitas públicas, e não uma propriedade específica das transferências incondicionais. Os diagnósticos incluem a estatística de Durbin-Watson e a correlação, dentro de cada município, entre as medidas de transferência e o PIB.
+
+\subsection{Ameaças à validade e limitações}
+
+O desenho tem limitações que restringem o alcance das conclusões, e convém enunciá-las antes dos resultados. Os coeficientes indicam associações, não efeitos causais, e o conjunto de especificações não foi registrado previamente: os resultados são exploratórios. A amostra das regressões tem 20 observações, mas, como o FPM total é idêntico nos dois municípios desde 2018, a variação do FPM per capita é a de uma série nacional dividida pela população de cada município; na prática, a identificação vem de cerca de dez pontos no tempo. Os resíduos são autocorrelacionados (Durbin-Watson entre 0,96 e 1,28 nos modelos principais), o que tende a subestimar os erros-padrão HC1, e com apenas duas unidades não é possível agrupá-los por município. Não é possível incluir efeitos fixos de ano, que absorveriam quase toda a variação do FPM. Diferentemente dos estudos que exploram as descontinuidades populacionais do fundo \citep{Bernardelli2026, Castro2021221}, aqui a variação das transferências acompanha o ciclo da arrecadação federal, que também move o FUNDEB, o SUS e a própria cota do ICMS. Como o gasto é limitado pela receita total, regredi-lo sobre um componente dessa receita aproxima-se de uma identidade contábil, risco que os placebos procuram medir. Faltam controles de demografia (matrículas e população idosa) e de ciclo eleitoral e alinhamento político, que a literatura considera relevantes. A literatura recente sobre painéis com efeitos fixos mostra, além disso, que estimativas desse tipo podem ser enviesadas quando os efeitos variam entre unidades e ao longo do tempo \citep{Baker2022}. Por fim, a comparação com a Hungria confronta dois municípios com um agregado nacional de governos locais e deve ser lida como contraste institucional, sem pretensão de equivalência entre as medidas.

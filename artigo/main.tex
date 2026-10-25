@@ -1,0 +1,94 @@
+% =====================================================================================
+% P2 - Finanças do Setor Público (UnB, CCA0169, 2026.2) - Artigo
+% Compilar no Overleaf com pdfLaTeX + BibTeX (padrão). Nome do PDF final: 232045821_P2_FSP.pdf
+% Estrutura: o texto de cada seção fica em secoes/; tabelas geradas por código em tabelas/;
+% figuras em figuras/. Comentários com "TODO" indicam o que falta escrever.
+% =====================================================================================
+\documentclass[12pt,a4paper]{article}
+
+% ---------- idioma, fonte e página
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\IfFileExists{brazil.ldf}{\usepackage[brazil]{babel}}{\usepackage[brazilian,provide=*]{babel}}
+\usepackage{mathptmx}  % Times, conforme o uso da ABNT
+\usepackage{microtype}
+\usepackage{indentfirst}  % recuo também no primeiro parágrafo de cada seção (ABNT)
+\usepackage[a4paper,top=3cm,left=3cm,bottom=2cm,right=2cm]{geometry}
+\usepackage{setspace}\onehalfspacing
+\setlength{\parindent}{1.25cm}
+
+% ---------- matemática, tabelas e figuras
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs,threeparttable,tabularx,multirow,adjustbox}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,},group-separator={.},group-minimum-digits=4}
+\usepackage{float}
+\usepackage[font=small,labelfont=bf,justification=centering]{caption}
+\usepackage{enumitem}
+
+% ---------- citações (autor-ano) e links
+\usepackage[round,authoryear]{natbib}
+\usepackage[hidelinks]{hyperref}
+\urlstyle{same}
+
+% ---------- títulos das seções no tamanho do texto (ABNT)
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+\AtBeginDocument{\renewcommand{\contentsname}{SUMÁRIO}\renewcommand{\refname}{REFERÊNCIAS}\renewcommand{\abstractname}{RESUMO}}
+
+% ---------- atalhos
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\usepackage{xcolor}
+\newcommand{\fonte}[1]{\par\vspace{2pt}{\footnotesize Fonte: #1}}
+
+\begin{document}
+
+% ========================== capa
+\begin{titlepage}
+\centering
+\includegraphics[width=6.5cm]{figuras/logo_unb.png}\par
+\vspace{1cm}
+João Gabriel Maréco Galhas --- Matrícula 232045821\par
+\vspace{0.3cm}
+Universidade de Brasília (UnB) --- Finanças do Setor Público (CCA0169), Turma 01, 2026.2\par
+Professor: Lucas Oliveira Gomes Ferreira\par
+\vfill
+{\bfseries Dependência de transferências, autonomia fiscal e efeito \textit{flypaper}: Barreiras e Camaçari (BA) e os governos locais da Hungria (2016--2025)\par}
+\vfill
+Brasília, outubro de 2026\par
+\end{titlepage}
+
+% ========================== sumário (folha sem número; a contagem segue)
+\setcounter{page}{2}
+\begingroup
+\singlespacing
+\tableofcontents
+\endgroup
+\thispagestyle{empty}
+\clearpage
+
+% ========================== resumo
+\input{secoes/00_resumo}
+
+% ========================== corpo
+\input{secoes/01_introducao}
+\input{secoes/02_referencial}   % inclui a página bibliométrica (secoes/03_bibliometria)
+\input{secoes/04_metodologia}
+\input{secoes/05_resultados}
+\input{secoes/06_conclusao}
+
+% ========================== referências
+% Artigos de periódicos (mínimo 80, citados e discutidos) + documentos, bases, legislação, P1 e tese.
+\bibliographystyle{plainnat-pt}
+\clearpage\phantomsection\addcontentsline{toc}{section}{REFERÊNCIAS}
+\begingroup
+\small\singlespacing
+\setlength{\bibsep}{3pt plus 1pt}
+\bibliography{referencias,candidatas}
+\endgroup
+
+\end{document}
