@@ -1,0 +1,18 @@
+﻿tipo,municipio,ano,variavel,detalhe
+zero_no_lugar_de_ausente,Camaçari,2019,Funcao_Saude,"P1 gravou 0, mas a função não consta na aba bruta do ano. Tratado como ausente (NaN). Saúde/Administração: certamente lacuna de coleta; Saneamento: pode ser gasto nulo (a DCA omite funções sem empenho) - conferir na nova coleta"
+zero_no_lugar_de_ausente,Barreiras,2014,Funcao_Saneamento,"P1 gravou 0, mas a função não consta na aba bruta do ano. Tratado como ausente (NaN). Saúde/Administração: certamente lacuna de coleta; Saneamento: pode ser gasto nulo (a DCA omite funções sem empenho) - conferir na nova coleta"
+zero_no_lugar_de_ausente,Barreiras,2017,Funcao_Saneamento,"P1 gravou 0, mas a função não consta na aba bruta do ano. Tratado como ausente (NaN). Saúde/Administração: certamente lacuna de coleta; Saneamento: pode ser gasto nulo (a DCA omite funções sem empenho) - conferir na nova coleta"
+zero_no_lugar_de_ausente,Barreiras,2018,Funcao_Saneamento,"P1 gravou 0, mas a função não consta na aba bruta do ano. Tratado como ausente (NaN). Saúde/Administração: certamente lacuna de coleta; Saneamento: pode ser gasto nulo (a DCA omite funções sem empenho) - conferir na nova coleta"
+zero_no_lugar_de_ausente,Barreiras,2020,Funcao_Saneamento,"P1 gravou 0, mas a função não consta na aba bruta do ano. Tratado como ausente (NaN). Saúde/Administração: certamente lacuna de coleta; Saneamento: pode ser gasto nulo (a DCA omite funções sem empenho) - conferir na nova coleta"
+zero_no_lugar_de_ausente,Barreiras,2021,Funcao_Saneamento,"P1 gravou 0, mas a função não consta na aba bruta do ano. Tratado como ausente (NaN). Saúde/Administração: certamente lacuna de coleta; Saneamento: pode ser gasto nulo (a DCA omite funções sem empenho) - conferir na nova coleta"
+zero_no_lugar_de_ausente,Barreiras,2022,Funcao_Saneamento,"P1 gravou 0, mas a função não consta na aba bruta do ano. Tratado como ausente (NaN). Saúde/Administração: certamente lacuna de coleta; Saneamento: pode ser gasto nulo (a DCA omite funções sem empenho) - conferir na nova coleta"
+zero_no_lugar_de_ausente,Barreiras,2023,Funcao_Saneamento,"P1 gravou 0, mas a função não consta na aba bruta do ano. Tratado como ausente (NaN). Saúde/Administração: certamente lacuna de coleta; Saneamento: pode ser gasto nulo (a DCA omite funções sem empenho) - conferir na nova coleta"
+zero_no_lugar_de_ausente,Barreiras,2018,Funcao_Administracao,"P1 gravou 0, mas a função não consta na aba bruta do ano. Tratado como ausente (NaN). Saúde/Administração: certamente lacuna de coleta; Saneamento: pode ser gasto nulo (a DCA omite funções sem empenho) - conferir na nova coleta"
+populacao_ausente,Barreiras,2022,População,P1 não preencheu; per capita do ano ficou vazio
+populacao_ausente,Barreiras,2023,População,P1 não preencheu; per capita do ano ficou vazio
+populacao_ausente,Camaçari,2022,População,P1 não preencheu; per capita do ano ficou vazio
+populacao_ausente,Camaçari,2023,População,P1 não preencheu; per capita do ano ficou vazio
+definicao_inconsistente,Barreiras,2016,FPM,"P1 = R$ 93,165,203.11 (só cota mensal); com as parcelas de 1% = R$ 93,577,577.65. A partir de 2018 a P1 soma as parcelas: quebra de definição"
+definicao_inconsistente,Camaçari,2017,FPM,"P1 = R$ 85,437,186.60 (só cota mensal); com as parcelas de 1% = R$ 93,153,175.02. A partir de 2018 a P1 soma as parcelas: quebra de definição"
+transferencia_extraordinaria,Barreiras,2017,Outras Transferências Multigovernamentais,"R$ 178,617,634.26 incluídos em Receita_Total/Transferencias da P1"
+salto_receita_total,Barreiras,2017,Receita_Total,variação nominal de +49.8% em relação ao ano anterior
